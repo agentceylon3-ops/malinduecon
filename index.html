@@ -1,0 +1,4020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- AOS CSS Link -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>Malidu | Econ</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font (Sinhala and English) -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+}
+body{
+    background-color: black;
+}
+
+/* Hero Section (Full Screen) */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* PC වලට */
+  height: 100dvh; /* Mobile screen එකට හරියටම ෆිට් වෙන්න */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 8%;
+}
+
+/* Background Photo Slider Container */
+.bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Slides Base Styling */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  animation: slideAnimation 16s infinite; /* 4 Photos x 4 Seconds = 16s cycle */
+}
+
+/* ඡායාරූප 4 හි Image Links (මෙතනට ඔයාගේ Photo Links දාන්න) */
+.slide-1 {
+  background-image: url('t1.jpg');
+  animation-delay: 0s;
+}
+
+.slide-2 {
+  background-image: url('t2.jpg');
+  animation-delay: 4s;
+}
+
+.slide-3 {
+  background-image: url('t3.jpg');
+  animation-delay: 8s;
+}
+
+.slide-4 {
+  background-image: url('t4.jpg');
+  animation-delay: 12s;
+}
+
+/* Photo 4 මාරු වෙන Animation Keyframes */
+@keyframes slideAnimation {
+  0% { opacity: 0; }
+  6% { opacity: 1; }   /* Fade in */
+  25% { opacity: 1; }  /* Visible for 4 seconds */
+  31% { opacity: 0; }  /* Fade out */
+  100% { opacity: 0; }
+}
+
+/* Dark Gradient Overlay for Text Visibility */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+
+/* Content Area */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 650px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Brand / Logo Title */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+}
+
+.brand-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+/* Main Big Title */
+.main-title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 1px;
+}
+
+.orange-text {
+  color: #ff7300; /* Screenshot එකේ තියෙන Orange Color එක */
+}
+
+/* Description Text */
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+  font-weight: 400;
+}
+
+/* Buttons Styling */
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background-color: #ff7300;
+  color: #ffffff;
+  border: 2px solid #ff7300;
+}
+
+.btn-primary:hover {
+  background-color: #e06500;
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile & Tablet responsiveness */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 0 6%;
+  }
+
+  .main-title {
+    font-size: 2.4rem;
+  }
+
+  .description {
+    font-size: 0.98rem;
+  }
+
+  .brand-name {
+    font-size: 0.88rem;
+  }
+}
+
+/* PC Design Adjustment */
+@media (min-width: 992px) {
+  .btn-group {
+    flex-direction: row; /* PC එකේදී Button දෙක පසෙකින් තැබීමට */
+    width: auto;
+  }
+
+  .btn {
+    width: auto;
+    padding: 14px 32px;
+  }
+}
+
+
+/*result count*/
+/* Results Section Black & Gold Theme */
+.results-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.results-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gold Sub-tag */
+.sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+/* White Section Title */
+.section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Counters Grid Layout */
+.counters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Counter Card Styling */
+.counter-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 35px 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.counter-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Gold Gradient Numbers */
+.counter-number {
+  font-size: 3.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 60%, #d4af37 100%);
+  
+  /* Standard & WebKit Properties */
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Text Color Transparency */
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  
+  margin-bottom: 8px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Text Label */
+.counter-label {
+  font-size: 1rem;
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .results-section {
+    padding: 50px 15px;
+  }
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  .counter-number {
+    font-size: 2.6rem;
+  }
+}
+
+
+/*result poto*/
+/* Orbit Section Background */
+.students-orbit-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 70px 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.orbit-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Orbit Wrapper (PC Size) */
+.orbit-wrapper {
+  position: relative;
+  width: 440px;
+  height: 440px;
+  margin: 50px auto 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center Gold Badge */
+.center-hub {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1a1a1a 0%, #000000 100%);
+  border: 2px solid #ffd700;
+  color: #ffd700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+  z-index: 5;
+}
+
+.hub-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hub-sub {
+  font-size: 0.65rem;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-top: 3px;
+}
+
+/* Outer Orbit Track Line & Rotation */
+.orbit-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px dashed rgba(212, 175, 55, 0.3);
+  animation: rotateOrbit 25s linear infinite; /* කැරකෙන වේගය (25s) වෙනස් කළ හැක */
+}
+
+/* User එක උඩට Mouse එක ගෙනිච්චම Pause වෙන්න */
+.orbit-wrapper:hover .orbit-ring,
+.orbit-wrapper:hover .student-circle img {
+  animation-play-state: paused;
+}
+
+/* Student Photo Circles */
+.student-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 75px;
+  height: 75px;
+  margin-top: -37.5px;
+  margin-left: -37.5px;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  background: #111;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.student-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: counterRotate 25s linear infinite; /* ඡායාරූපය කෙළින්ම තබා ගැනීමට */
+}
+
+/* Angle Positioning for 8 Items (Radius: 180px) */
+.item-1 { transform: rotate(0deg) translate(180px) rotate(0deg); }
+.item-2 { transform: rotate(45deg) translate(180px) rotate(-45deg); }
+.item-3 { transform: rotate(90deg) translate(180px) rotate(-90deg); }
+.item-4 { transform: rotate(135deg) translate(180px) rotate(-135deg); }
+.item-5 { transform: rotate(180deg) translate(180px) rotate(-180deg); }
+.item-6 { transform: rotate(225deg) translate(180px) rotate(-225deg); }
+.item-7 { transform: rotate(270deg) translate(180px) rotate(-270deg); }
+.item-8 { transform: rotate(315deg) translate(180px) rotate(-315deg); }
+
+/* Animation Keyframes */
+@keyframes rotateOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes counterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+/* Mobile Screen Responsiveness (Resize for Small Displays) */
+@media (max-width: 500px) {
+  .orbit-wrapper {
+    width: 290px;
+    height: 290px;
+    margin-top: 35px;
+  }
+
+  .center-hub {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hub-title {
+    font-size: 1rem;
+  }
+
+  .hub-sub {
+    font-size: 0.55rem;
+  }
+
+  .student-circle {
+    width: 55px;
+    height: 55px;
+    margin-top: -27.5px;
+    margin-left: -27.5px;
+  }
+
+  /* Mobile Radius Adjustment (Radius: 120px) */
+  .item-1 { transform: rotate(0deg) translate(120px) rotate(0deg); }
+  .item-2 { transform: rotate(45deg) translate(120px) rotate(-45deg); }
+  .item-3 { transform: rotate(90deg) translate(120px) rotate(-90deg); }
+  .item-4 { transform: rotate(135deg) translate(120px) rotate(-135deg); }
+  .item-5 { transform: rotate(180deg) translate(120px) rotate(-180deg); }
+  .item-6 { transform: rotate(225deg) translate(120px) rotate(-225deg); }
+  .item-7 { transform: rotate(270deg) translate(120px) rotate(-270deg); }
+  .item-8 { transform: rotate(315deg) translate(120px) rotate(-315deg); }
+}
+
+
+
+/*class time table*/
+/* Schedule Section Styling */
+.schedule-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.schedule-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.schedule-section .sub-tag {
+  color: #d4af37;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 6px 18px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.schedule-section .section-title {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 45px;
+  font-weight: 800;
+}
+
+/* Grid Layout (Default PC: 3 columns) */
+.schedule-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  text-align: left;
+}
+
+/* Institute Card Styling */
+.institute-card {
+  background: #111111;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 16px;
+  padding: 20px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.institute-card:hover {
+  transform: translateY(-5px);
+  border-color: #ffd700;
+}
+
+/* Header (Logo + Name + Location) */
+.inst-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.inst-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.inst-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.inst-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.inst-location {
+  font-size: 0.8rem;
+  color: #d4af37;
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* Batch Content Box */
+.batch-content {
+  margin-top: 15px;
+}
+
+.batch-box {
+  padding: 6px 0;
+}
+
+.batch-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.batch-time {
+  font-size: 0.85rem;
+  color: #dcdcdc;
+  line-height: 1.4;
+}
+
+/* Inner Divider line separating 2027 and 2028 */
+.inner-divider {
+  width: 100%;
+  height: 1px;
+  background: rgba(212, 175, 55, 0.2);
+  margin: 10px 0;
+}
+
+/* Mobile Screen Responsiveness: Box 2 per row */
+@media (max-width: 768px) {
+  .schedule-section {
+    padding: 50px 10px;
+  }
+
+  .schedule-section .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  /* Mobile එකේදී box 2ක් පසෙකින් පෙන්වීමට */
+  .schedule-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .institute-card {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .inst-header {
+    gap: 8px;
+    padding-bottom: 10px;
+  }
+
+  .inst-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .inst-name {
+    font-size: 0.82rem;
+  }
+
+  .inst-location {
+    font-size: 0.7rem;
+  }
+
+  .batch-title {
+    font-size: 0.78rem;
+  }
+
+  .batch-time {
+    font-size: 0.72rem;
+  }
+
+  .inner-divider {
+    margin: 8px 0;
+  }
+}
+
+
+/*text animation*/
+/* Base Styling for Scroll Text Animations */
+.scroll-anim {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Effect 1: Fade Up */
+.scroll-anim.fade-up {
+  transform: translateY(80px);
+}
+
+/* Effect 2: Fade In Left */
+.scroll-anim.fade-in-left {
+  transform: translateX(-50px);
+}
+
+/* Effect 3: Zoom In */
+.scroll-anim.zoom-in {
+  transform: scale(0.85);
+}
+
+/* Active State (Scroll කරලා ඒ ස්ථානයට ආ පසු ක්‍රියාත්මක වේ) */
+.scroll-anim.appear {
+  opacity: 1;
+  transform: translateY(0) translateX(0) scale(1);
+}
+
+
+
+/*payment box*/
+/* Smooth Scrolling Effect */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Container Styling */
+.online-class-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+    font-family: Arial, sans-serif;
+}
+
+/* Card Design */
+.teacher-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    padding: 25px 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Teacher Image Styling */
+.teacher-photo {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+    margin-bottom: 15px;
+}
+
+.teacher-card h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+/* Buttons Alignment */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Base Button Style */
+.btn {
+    flex: 1;
+    padding: 12px 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.1s;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* Red Button - Register */
+.btn-register {
+    background-color: #dc3545;
+}
+
+.btn-register:hover {
+    background-color: #c82333;
+}
+
+/* Green Button - Payment */
+.btn-payment {
+    background-color: #28a745;
+}
+
+.btn-payment:hover {
+    background-color: #218838;
+}
+
+/* POPUP MODAL STYLING */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.65); 
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    animation: popupAnim 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+@keyframes popupAnim {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #777777;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #000000;
+}
+
+.payment-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 12px;
+}
+
+/* Responsive tweaks for very small screens */
+@media (max-width: 360px) {
+    .button-group {
+        flex-direction: column;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+
+/*memory*/
+/* Memories Gallery Section */
+.memories-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.memories-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Gallery Grid Layout (PC Setup) */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  height: 240px;
+  background: #111111;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* First Photo: Featured Large Box */
+.gallery-item.item-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  height: 496px;
+}
+
+/* Image Hover Zoom Effect */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover {
+  border-color: #ffd700;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* Text Overlay on Hover */
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  color: #ffd700;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 768px) {
+  .memories-section {
+    padding: 50px 12px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-item {
+    height: 160px;
+    border-radius: 10px;
+  }
+
+  /* Mobile එකේදී ප්‍රධාන Photo එක උඩින්ම පළල්ව පෙනෙන පරිදි */
+  .gallery-item.item-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    height: 210px;
+  }
+
+  .gallery-overlay {
+    opacity: 1; /* Touch screens සඳහා නිතරම text එක පෙනෙන පරිදි */
+    font-size: 0.78rem;
+    padding: 10px;
+  }
+}
+
+
+
+/*rsvp*/
+/* පෝරමය සඳහා සැකසුම් (Form Section Styles) */
+.rsvp-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.rsvp-section .section-title {
+    text-align: center;
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 16px;
+    color: #34495e;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input, 
+.input-group select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 1px solid #ccd1d9;
+    border-radius: 8px;
+    box-sizing: border-box; /* පෝරමය එළියට පනින්නේ නැති වෙන්න */
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.input-group input:focus, 
+.input-group select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #e74c3c;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: inherit;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .form-wrapper {
+        padding: 25px 20px;
+    }
+    .rsvp-section .section-title {
+        font-size: 20px;
+    }
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    font-family: 'A-FMBinara', 'Abhaya Libre', sans-serif;
+}
+
+.contact-box {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    border-top: 5px solid #25D366; /* WhatsApp කොළ පාට */
+}
+
+.contact-box .section-title {
+    font-size: 26px;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.contact-description {
+    font-size: 16px;
+    color: #555555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* සාමාන්‍ය විස්තර (Phone & Email) */
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    font-size: 18px;
+    color: #34495e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contact-icon {
+    font-size: 20px;
+}
+
+/* WhatsApp බොත්තම */
+.whatsapp-container {
+    margin-top: 20px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #25D366; /* Official WhatsApp Color */
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ebe57;
+    transform: translateY(-3px);
+}
+
+.wa-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ජංගම දුරකථන සඳහා (Mobile Responsive) */
+@media screen and (max-width: 768px) {
+    .contact-box {
+        padding: 30px 20px;
+    }
+    
+    .contact-box .section-title {
+        font-size: 22px;
+    }
+
+    .whatsapp-btn {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+}
+.divider-line {
+    border-top: 1px solid #ffffff; /* සුදු පාට ඉර */
+    margin: 12px 0;                 /* උඩින් සහ යටින් ඉඩ (Gap) */
+    opacity: 0.6;                   /* ලස්සනට පෙනෙන්න පොඩි opacity එකක් (ඕන නැත්නම් මේ පේලිය අයින් කරන්න) */
+}
+
+
+
+/*profile poto*/
+/* Teacher Profile Section */
+.teacher-profile-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.teacher-profile-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+/* Gold Gradient Border Frame */
+.teacher-img-wrapper {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  border-radius: 20px;
+  padding: 6px; /* Gold Border එකේ මහත */
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 50%, #d4af37 100%); /* Gold Gradient */
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.35); /* Subtle Gold Glow */
+  flex-shrink: 0;
+}
+
+.teacher-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+  background-color: #111111;
+  display: block;
+}
+
+/* Details Section Styling */
+.teacher-details {
+  max-width: 500px;
+  text-align: left;
+}
+
+.teacher-details .sub-tag {
+  color: #d4af37;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-bottom: 8px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.teacher-name {
+  font-size: 2.2rem;
+  color: #ffffff;
+  margin: 10px 0 15px 0;
+  font-weight: 800;
+}
+
+.teacher-bio {
+  font-size: 1rem;
+  color: #cccccc;
+  line-height: 1.7;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .teacher-profile-section {
+    padding: 50px 15px;
+  }
+
+  .teacher-profile-container {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .teacher-details {
+    text-align: center;
+  }
+
+  .teacher-img-wrapper {
+    width: 250px;
+    height: 300px;
+  }
+
+  .teacher-name {
+    font-size: 1.8rem;
+  }
+
+  .teacher-bio {
+    font-size: 0.92rem;
+  }
+}
+
+
+
+/*rejister form*/
+/* Registration Section Styling */
+.registration-section {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.registration-container {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+/* Card Container */
+.reg-card {
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0d0d0d 100%);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 20px;
+  padding: 50px 30px;
+  box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.reg-title {
+  font-size: 2rem;
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.reg-description {
+  font-size: 1rem;
+  color: #cccccc;
+  max-width: 650px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* Gold Gradient Registration Button */
+.reg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #ffd700 0%, #d4af37 100%);
+  color: #000000;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 16px 36px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+}
+
+.reg-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  background: linear-gradient(135deg, #ffffff 0%, #ffd700 100%);
+}
+
+.reg-btn svg {
+  transition: transform 0.3s ease;
+}
+
+.reg-btn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .registration-section {
+    padding: 50px 15px;
+  }
+
+  .reg-card {
+    padding: 30px 18px;
+    border-radius: 16px;
+  }
+
+  .reg-title {
+    font-size: 1.4rem;
+  }
+
+  .reg-description {
+    font-size: 0.9rem;
+  }
+
+  .reg-btn {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+
+/*about section*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --bg-black: #0a0a0a;
+    --card-dark: #141414;
+    --card-border: #262626;
+    --gold-primary: #facc15; /* Yellow Gold */
+    --gold-glow: rgba(250, 204, 21, 0.25);
+    --text-white: #ffffff;
+    --text-gray: #cbd5e1;
+}
+
+.malindu-sir-section {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle Gold Glow Background Effect */
+.malindu-sir-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.ms-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ms-gold-text {
+    color: var(--gold-primary);
+}
+
+/* --- Top Profile Section --- */
+.ms-profile-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 70px;
+}
+
+.ms-image-box {
+    flex: 1;
+    max-width: 420px;
+}
+
+.ms-image-frame {
+    position: relative;
+    border-radius: 20px;
+    padding: 10px;
+    background: linear-gradient(145deg, var(--gold-primary), #1a1a1a 60%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8);
+}
+
+.ms-image-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+    object-fit: cover;
+    background-color: #1a1a1a;
+}
+
+.ms-experience-badge {
+    position: absolute;
+    bottom: -15px;
+    right: 20px;
+    background-color: #111111;
+    border: 1px solid var(--gold-primary);
+    color: var(--text-white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+.ms-bio-box {
+    flex: 1.4;
+}
+
+.ms-subtitle {
+    display: inline-block;
+    background: rgba(250, 204, 21, 0.12);
+    color: var(--gold-primary);
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ms-title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 8px 0;
+}
+
+.ms-qualifications {
+    font-size: 1.1rem;
+    color: var(--gold-primary);
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.ms-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+}
+
+.ms-stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ms-stat-item {
+    background-color: var(--card-dark);
+    border: 1px solid var(--card-border);
+    padding: 12px 18px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.ms-stat-item i {
+    color: var(--gold-primary);
+    font-size: 1.1rem;
+}
+
+.ms-stat-item:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-3px);
+}
+
+/* --- Special Programs Section --- */
+.ms-programs-wrapper {
+    background-color: #0f0f0f;
+    border: 1px solid var(--card-border);
+    border-radius: 24px;
+    padding: 45px 35px;
+}
+
+.ms-programs-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ms-programs-header h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 0 12px 0;
+}
+
+.ms-header-line {
+    width: 80px;
+    height: 4px;
+    background-color: var(--gold-primary);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.ms-programs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.ms-program-card {
+    background-color: var(--card-dark);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 28px 24px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.ms-program-card:hover {
+    border-color: var(--gold-primary);
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(250, 204, 21, 0.12);
+}
+
+.ms-card-number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: rgba(250, 204, 21, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+.ms-card-icon {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(250, 204, 21, 0.12);
+    color: var(--gold-primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+}
+
+.ms-program-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin: 0 0 10px 0;
+}
+
+.ms-program-card p {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+/* --- Responsive Design (Mobile & Tablet) --- */
+@media (max-width: 900px) {
+    .ms-profile-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+
+    .ms-image-box {
+        max-width: 340px;
+        width: 100%;
+    }
+
+    .ms-stats-row {
+        justify-content: center;
+    }
+
+    .ms-title {
+        font-size: 2.4rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .malindu-sir-section {
+        padding: 50px 15px;
+    }
+
+    .ms-title {
+        font-size: 2rem;
+    }
+
+    .ms-programs-wrapper {
+        padding: 30px 18px;
+    }
+
+    .ms-programs-header h3 {
+        font-size: 1.6rem;
+    }
+
+    .ms-programs-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+  /*time table*/
+  /* --- Timetable Section --- */
+.ms-timetable-section {
+    background-color: #080808;
+    color: #ffffff;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    padding: 80px 20px;
+    border-top: 1px solid #1f1f1f;
+}
+
+.ms-tt-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ms-tt-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ms-tt-badge {
+    display: inline-block;
+    background: rgba(250, 204, 21, 0.12);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ms-tt-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+}
+
+.ms-tt-header p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Filter Tabs */
+.ms-tt-tabs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 45px;
+}
+
+.ms-tab-btn {
+    background-color: #141414;
+    color: #ffffff;
+    border: 1px solid #2e2e2e;
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ms-tab-btn:hover {
+    border-color: #facc15;
+    color: #facc15;
+}
+
+.ms-tab-btn.active {
+    background-color: #facc15;
+    color: #000000;
+    border-color: #facc15;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(250, 204, 21, 0.3);
+}
+
+/* Cards Grid */
+.ms-tt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.ms-tt-card {
+    background-color: #121212;
+    border: 1px solid #262626;
+    border-radius: 20px;
+    padding: 28px;
+    transition: all 0.3s ease;
+    animation: fadeInCard 0.4s ease forwards;
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ms-tt-card:hover {
+    border-color: #facc15;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(250, 204, 21, 0.1);
+}
+
+.ms-tt-card.online-card {
+    background: linear-gradient(145deg, #141414, #1c190d);
+    border-color: rgba(250, 204, 21, 0.35);
+}
+
+.ms-tt-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.ms-year-tag {
+    background-color: #facc15;
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ms-type-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background-color: #1f1f1f;
+    color: #cbd5e1;
+    border: 1px solid #333;
+}
+
+.ms-type-tag.online-tag {
+    color: #facc15;
+    border-color: rgba(250, 204, 21, 0.4);
+    background-color: rgba(250, 204, 21, 0.1);
+}
+
+.ms-institute-name {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #262626;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ms-institute-name i {
+    color: #facc15;
+}
+
+.ms-schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ms-schedule-item {
+    background-color: #1a1a1a;
+    padding: 14px 16px;
+    border-radius: 12px;
+    border-left: 3px solid #facc15;
+}
+
+.ms-class-cat {
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #facc15;
+    margin-bottom: 8px;
+}
+
+.ms-class-cat.rev-cat {
+    color: #ffffff;
+}
+
+.ms-time-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 0.95rem;
+    color: #e2e8f0;
+}
+
+.ms-time-row span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ms-time-row i {
+    color: #facc15;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .ms-timetable-section {
+        padding: 50px 15px;
+    }
+
+    .ms-tt-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .ms-tt-tabs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ms-tab-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .ms-tt-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+  /* --- Special Online Programmes Box (MCQ Booster & EQ Master) --- */
+.ms-special-online-section {
+    background-color: #080808;
+    color: #ffffff;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    padding: 40px 20px 80px 20px;
+}
+
+.ms-so-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.ms-so-main-box {
+    background: linear-gradient(145deg, #141414, #0d0d0d);
+    border: 2px solid rgba(250, 204, 21, 0.45);
+    border-radius: 26px;
+    padding: 45px 35px;
+    position: relative;
+    box-shadow: 0 15px 40px rgba(250, 204, 21, 0.08);
+}
+
+.ms-so-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ms-so-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(250, 204, 21, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.4);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    margin-bottom: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ms-so-header h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.ms-so-header p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    margin: 0;
+}
+
+.ms-so-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.ms-so-card {
+    background-color: #161616;
+    border: 1px solid #2b2b2b;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+.ms-so-card:hover {
+    border-color: #facc15;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(250, 204, 21, 0.12);
+}
+
+.ms-so-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.ms-so-icon {
+    width: 52px;
+    height: 52px;
+    background-color: #facc15;
+    color: #000000;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 5px 15px rgba(250, 204, 21, 0.3);
+}
+
+.ms-so-platform {
+    background-color: #222222;
+    color: #facc15;
+    border: 1px solid #333333;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ms-so-card h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.ms-so-desc {
+    color: #cbd5e1;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin: 0 0 25px 0;
+}
+
+/* Date & Time Highlight Box inside Card */
+.ms-so-datetime-box {
+    background-color: #0e0e0e;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.ms-so-dt-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ms-so-dt-item i {
+    color: #facc15;
+    font-size: 1.3rem;
+}
+
+.ms-so-dt-item small {
+    display: block;
+    font-size: 0.78rem;
+    color: #94a3b8;
+    margin-bottom: 2px;
+}
+
+.ms-so-dt-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.ms-so-dt-divider {
+    width: 1px;
+    height: 35px;
+    background-color: #2a2a2a;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 850px) {
+    .ms-so-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .ms-so-main-box {
+        padding: 30px 18px;
+    }
+
+    .ms-so-header h2 {
+        font-size: 1.7rem;
+    }
+
+    .ms-so-card {
+        padding: 22px 18px;
+    }
+
+    .ms-so-datetime-box {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .ms-so-dt-divider {
+        width: 100%;
+        height: 1px;
+    }
+}
+
+
+/*register */
+/* --- Registration Form Section --- */
+.ms-register-section {
+    background-color: #0a0a0a;
+    color: #ffffff;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    padding: 80px 20px;
+    border-top: 1px solid #1f1f1f;
+}
+
+.ms-reg-container {
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.ms-reg-box {
+    background: linear-gradient(145deg, #141414, #0e0e0e);
+    border: 1px solid rgba(250, 204, 21, 0.35);
+    border-radius: 24px;
+    padding: 45px 40px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.85);
+}
+
+.ms-reg-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.ms-reg-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(250, 204, 21, 0.12);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ms-reg-header h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin: 0 0 10px 0;
+}
+
+.ms-reg-header p {
+    color: #cbd5e1;
+    font-size: 0.98rem;
+    margin: 0;
+}
+
+/* Form Elements */
+.ms-reg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.ms-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ms-form-group > label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #f8fafc;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ms-form-group > label i {
+    color: #facc15;
+}
+
+.ms-reg-form input[type="text"],
+.ms-reg-form select {
+    width: 100%;
+    background-color: #1a1a1a;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 14px 16px;
+    color: #ffffff;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.ms-reg-form input[type="text"]::placeholder {
+    color: #64748b;
+}
+
+.ms-reg-form input[type="text"]:focus,
+.ms-reg-form select:focus {
+    border-color: #facc15;
+    background-color: #202020;
+    box-shadow: 0 0 0 3px rgba(250, 204, 21, 0.15);
+}
+
+.ms-reg-form select option {
+    background-color: #141414;
+    color: #ffffff;
+}
+
+/* Radio Cards for Participation Mode */
+.ms-radio-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 4px;
+}
+
+.ms-radio-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.ms-radio-card input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ms-radio-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #1a1a1a;
+    border: 1.5px solid #2e2e2e;
+    border-radius: 14px;
+    padding: 18px 10px;
+    transition: all 0.3s ease;
+}
+
+.ms-radio-box i {
+    font-size: 1.4rem;
+    color: #94a3b8;
+    margin-bottom: 8px;
+    transition: 0.3s ease;
+}
+
+.ms-radio-box strong {
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.ms-radio-box small {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.ms-radio-card:hover .ms-radio-box {
+    border-color: rgba(250, 204, 21, 0.5);
+}
+
+/* Checked State */
+.ms-radio-card input[type="radio"]:checked + .ms-radio-box {
+    background-color: rgba(250, 204, 21, 0.12);
+    border-color: #facc15;
+    box-shadow: 0 5px 15px rgba(250, 204, 21, 0.15);
+}
+
+.ms-radio-card input[type="radio"]:checked + .ms-radio-box i,
+.ms-radio-card input[type="radio"]:checked + .ms-radio-box strong {
+    color: #facc15;
+}
+
+/* WhatsApp Submit Button */
+.ms-wa-submit-btn {
+    margin-top: 10px;
+    background-color: #facc15;
+    color: #000000;
+    border: none;
+    border-radius: 14px;
+    padding: 16px 24px;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(250, 204, 21, 0.3);
+}
+
+.ms-wa-submit-btn i {
+    font-size: 1.4rem;
+}
+
+.ms-wa-submit-btn:hover {
+    background-color: #eab308;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(250, 204, 21, 0.45);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .ms-register-section {
+        padding: 50px 15px;
+    }
+
+    .ms-reg-box {
+        padding: 30px 20px;
+    }
+
+    .ms-reg-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .ms-radio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ms-radio-box {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        padding: 14px 18px;
+        gap: 14px;
+    }
+
+    .ms-radio-box i {
+        margin-bottom: 0;
+    }
+
+    .ms-radio-box small {
+        margin-left: auto;
+    }
+}
+
+
+
+    /* --- Your Teacher (ඔබේ ගුරුවරයා) & Qualifications Section --- */
+.ms-teacher-qual-section {
+    background-color: #090909;
+    color: #ffffff;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    padding: 80px 20px;
+    border-top: 1px solid #1f1f1f;
+    position: relative;
+}
+
+.ms-tq-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ms-tq-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 55px;
+}
+
+/* Left Side: Photo */
+.ms-tq-photo-col {
+    flex: 1;
+    max-width: 420px;
+}
+
+.ms-tq-photo-frame {
+    position: relative;
+    border-radius: 24px;
+    padding: 10px;
+    background: linear-gradient(135deg, #facc15 0%, #262626 50%, #facc15 100%);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85);
+}
+
+.ms-tq-photo-frame img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+    object-fit: cover;
+    background-color: #141414;
+}
+
+.ms-tq-floating-tag {
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #111111;
+    border: 1.5px solid #facc15;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8);
+    font-family: 'Poppins', sans-serif;
+}
+
+.ms-tq-floating-tag i {
+    color: #facc15;
+    font-size: 1.15rem;
+}
+
+/* Right Side: Tagline & 4 Qualifications */
+.ms-tq-content-col {
+    flex: 1.4;
+}
+
+.ms-tq-tagline {
+    display: inline-block;
+    background-color: rgba(250, 204, 21, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.4);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.ms-tq-name {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    line-height: 1.2;
+}
+
+.ms-tq-intro {
+    color: #cbd5e1;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin: 0 0 30px 0;
+}
+
+/* 4 Qualifications Grid */
+.ms-qual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.ms-qual-card {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    transition: all 0.3s ease;
+}
+
+.ms-qual-card:hover {
+    border-color: #facc15;
+    background-color: #191919;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(250, 204, 21, 0.12);
+}
+
+.ms-qual-icon {
+    min-width: 46px;
+    height: 46px;
+    background-color: rgba(250, 204, 21, 0.12);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    transition: 0.3s ease;
+}
+
+.ms-qual-card:hover .ms-qual-icon {
+    background-color: #facc15;
+    color: #000000;
+}
+
+.ms-qual-text h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    line-height: 1.35;
+}
+
+.ms-qual-text p {
+    font-size: 0.88rem;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 950px) {
+    .ms-tq-wrapper {
+        flex-direction: column;
+        text-align: center;
+        gap: 45px;
+    }
+
+    .ms-tq-photo-col {
+        max-width: 340px;
+        width: 100%;
+    }
+
+    .ms-qual-card {
+        text-align: left;
+    }
+}
+
+@media (max-width: 650px) {
+    .ms-teacher-qual-section {
+        padding: 55px 15px;
+    }
+
+    .ms-tq-name {
+        font-size: 2.2rem;
+    }
+
+    .ms-qual-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+/* --- Why Our Class is Special Section --- */
+.ms-why-special-section {
+    background-color: #090909;
+    color: #ffffff;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    padding: 80px 20px;
+    border-top: 1px solid #1f1f1f;
+}
+
+.ms-ws-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Top Banner: Free Tute Delivery */
+.ms-tute-banner {
+    background: linear-gradient(135deg, rgba(250, 204, 21, 0.16) 0%, #141414 100%);
+    border: 1.5px solid rgba(250, 204, 21, 0.5);
+    border-radius: 20px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 55px;
+    box-shadow: 0 12px 30px rgba(250, 204, 21, 0.08);
+}
+
+.ms-tute-icon {
+    min-width: 60px;
+    height: 60px;
+    background-color: #facc15;
+    color: #000000;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.7rem;
+    box-shadow: 0 6px 18px rgba(250, 204, 21, 0.35);
+}
+
+.ms-tute-tag {
+    display: inline-block;
+    background-color: #facc15;
+    color: #000000;
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 3px 12px;
+    border-radius: 50px;
+    margin-bottom: 6px;
+}
+
+.ms-tute-text p {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.5;
+}
+
+.ms-tute-text strong {
+    color: #facc15;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Section Header */
+.ms-ws-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.ms-ws-badge {
+    display: inline-block;
+    background: rgba(250, 204, 21, 0.12);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    padding: 5px 16px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.ms-ws-header h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+}
+
+.ms-ws-line {
+    width: 80px;
+    height: 4px;
+    background-color: #facc15;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* 6 Features Grid */
+.ms-ws-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.ms-ws-card {
+    background-color: #141414;
+    border: 1px solid #262626;
+    border-radius: 18px;
+    padding: 28px 24px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.ms-ws-card:hover {
+    border-color: #facc15;
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(250, 204, 21, 0.12);
+}
+
+.ms-ws-card-icon {
+    width: 52px;
+    height: 52px;
+    background-color: rgba(250, 204, 21, 0.12);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.3);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 18px;
+    transition: 0.3s ease;
+}
+
+.ms-ws-card:hover .ms-ws-card-icon {
+    background-color: #facc15;
+    color: #000000;
+}
+
+.ms-ws-card h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.ms-ws-card p {
+    font-size: 0.94rem;
+    color: #cbd5e1;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Bottom Limited Seats Notice (සැ.යු.) */
+.ms-limited-notice {
+    background-color: #14120a;
+    border: 2px dashed #facc15;
+    border-radius: 18px;
+    padding: 24px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.ms-notice-badge {
+    background-color: #facc15;
+    color: #000000;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 8px 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.ms-limited-notice p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #f8fafc;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.ms-highlight-seat {
+    color: #facc15;
+    font-weight: 800;
+    font-size: 1.15rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 950px) {
+    .ms-ws-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .ms-why-special-section {
+        padding: 55px 15px;
+    }
+
+    .ms-tute-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 20px;
+    }
+
+    .ms-ws-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .ms-ws-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ms-limited-notice {
+        flex-direction: column;
+        text-align: center;
+        padding: 22px 18px;
+    }
+}
+
+
+/*footer*/
+/* --- Footer Section --- */
+.ms-footer {
+    background-color: #050505;
+    color: #ffffff;
+    font-family: 'Noto Sans Sinhala', 'Poppins', sans-serif;
+    padding: 55px 20px 30px 20px;
+    border-top: 2px solid rgba(250, 204, 21, 0.35);
+    position: relative;
+}
+
+.ms-footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.ms-footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.ms-footer-brand h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin: 0 0 8px 0;
+}
+
+.ms-footer-brand p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Social Media Icons */
+.ms-social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.ms-social-btn {
+    width: 48px;
+    height: 48px;
+    background-color: #141414;
+    border: 1.5px solid #2e2e2e;
+    border-radius: 50%;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.ms-social-btn:hover {
+    background-color: #facc15;
+    border-color: #facc15;
+    color: #000000;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(250, 204, 21, 0.35);
+}
+
+/* Divider */
+.ms-footer-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #262626, transparent);
+    margin-bottom: 25px;
+}
+
+/* Bottom Row & Home Artist Credit */
+.ms-footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+.ms-copyright {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ms-copyright strong {
+    color: #ffffff;
+}
+
+.ms-dev-credit {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.ms-dev-link {
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #121212;
+    border: 1px solid #262626;
+    padding: 5px 14px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.ms-dev-link:hover {
+    border-color: #facc15;
+    background-color: #1a1a1a;
+}
+
+.ms-dev-phone {
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.ms-dev-phone i {
+    color: #facc15;
+    font-size: 0.78rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .ms-footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ms-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .ms-dev-credit {
+        justify-content: center;
+    }
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <section class="hero-section">
+    
+    <!-- 4 Background Images Slider -->
+    <div class="bg-slider">
+      <div class="slide slide-1"></div>
+      <div class="slide slide-2"></div>
+      <div class="slide slide-3"></div>
+      <div class="slide slide-4"></div>
+    </div>
+
+    <!-- Text එක ලස්සනට පේන්න දාන Dark Overlay එක -->
+    <div class="overlay"></div>
+
+    <!-- එක තැන තියෙන Text සහ Buttons ටික -->
+    <div class="hero-content">
+      
+      <div class="brand">
+        <img src="logo.jpg" alt="Logo" class="logo" data-aos="fade-up" data-aos-duration="1300">
+        <span class="brand-name" data-aos="fade-up" data-aos-duration="1300">චරිත හදන — Econ පන්තිය</span>
+      </div>
+
+      <h1 class="main-title" data-aos="fade-up" data-aos-duration="1500">
+        <span class="orange-text" >ECON </span>CLASS
+      </h1>
+
+      <p class="description" data-aos="fade-up" data-aos-duration="1800">
+        මලිදු ජයසංක — අසමතුන් නැති හොදම කණ්ඩායම් පන්තිය.
+      </p>
+
+      <div class="btn-group">
+        <a href="#register-form" class="btn btn-primary" data-aos="fade-up" data-aos-duration="2100">Online Class එකට එකතු වෙන්න</a>
+        <a href="#contact1" class="btn btn-outline" data-aos="fade-up" data-aos-duration="2300">WhatsApp හරහා අසන්න</a>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ඔයාගේ HTML <head> එකේ Font Awesome නැත්නම් මේ line එක <head> ඇතුළට දාන්න -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- Sir Introduction & Special Programs Section -->
+<section class="malindu-sir-section" id="about-sir">
+    <div class="ms-container">
+        
+        <!-- Top Part: Photo & Bio -->
+        <div class="ms-profile-wrapper">
+            <!-- Left Side: Sir's Photo -->
+            <div class="ms-image-box scroll-anim fade-up">
+                <div class="ms-image-frame">
+                    <!-- මෙතන src එකට සර්ගේ ෆොටෝ එකේ path එක හෝ link එක දාන්න -->
+                    <img src="about.jpg" alt="Malindu Sir - Economics">
+                    <div class="ms-experience-badge">
+                        <span class="ms-gold-text">A/L</span> ECONOMICS
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Sir's Details -->
+            <div class="ms-bio-box">
+                
+                <h2 class="ms-title scroll-anim fade-up">මලිඳු <span class="ms-gold-text">සර්</span></h2>
+                <h4 class="ms-qualifications scroll-anim fade-up">උසස් පෙළ ආර්ථික විද්‍යා දේශක</h4>
+                
+                <p class="ms-description scroll-anim fade-up">
+                    සංකීර්ණ ආර්ථික විද්‍යා සිද්ධාන්ත ඉතා සරලව, ප්‍රායෝගික උදාහරණ සහිතව සිසුන්ගේ මනසට කාවදින ලෙස ඉගැන්වීමේ සුවිශේෂී කලාවක් හිමි දේශකවරයෙකි. නව විෂය නිර්දේශයට අනුකූලව, විභාග ඉලක්කගත ප්‍රශ්න පත්‍ර සාකච්ඡා කරමින් වසර ගණනාවක් පුරා දිවයිනේ විශිෂ්ටතම A සාමාර්ථ ප්‍රතිශතයක් බිහිකිරීමට මඟ පෙන්වූ ගුරු පෞරුෂයකි.
+                </p>
+
+                <!-- Quick Highlights -->
+                <div class="ms-stats-row ">
+                    <div class="ms-stat-item scroll-anim fade-up">
+                        <i class="fas fa-award"></i>
+                        <span>විශිෂ්ට ප්‍රතිඵල</span>
+                    </div>
+                    <div class="ms-stat-item scroll-anim fade-up">
+                        <i class="fas fa-book-open"></i>
+                        <span>සරල ඉගැන්වීම් රටාව</span>
+                    </div>
+                    <div class="ms-stat-item scroll-anim fade-up">
+                        <i class="fas fa-bullseye"></i>
+                        <span>විභාග ඉලක්කගත පුහුණුව</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Part: Special Programs (අපේ විශේෂ වැඩසටහන්) -->
+        <div class="ms-programs-wrapper">
+            <div class="ms-programs-header scroll-anim fade-up">
+                <h3>අපේ <span class="ms-gold-text">විශේෂ වැඩසටහන්</span></h3>
+                <div class="ms-header-line"></div>
+            </div>
+
+            <div class="ms-programs-grid">
+                <!-- Program 1 -->
+                <div class="ms-program-card scroll-anim fade-up">
+                    <div class="ms-card-number">01</div>
+                    <div class="ms-card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <h4>Zero to Hero Revision</h4>
+                    <p>මුල සිට සරලව සෑම පාඩම් ඒකකයක්ම අංගසම්පූර්ණව ආවරණය කිරීම සහ පැහැදිලි කෙටි සටහන් (Smart Notes) ලබා දීම.</p>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="ms-program-card scroll-anim fade-up">
+                    <div class="ms-card-number">02</div>
+                    <div class="ms-card-icon"><i class="fas fa-file-alt"></i></div>
+                    <h4>MCQ Booster - MCQ 5000</h4>
+                    <p>පසුගිය විභාග ප්‍රශ්න පත්‍ර (Past Papers) සහ අනුමාන ආදර්ශ ප්‍රශ්න පත්‍ර නියමිත කාලයට අනුව ලියවා පිළිතුරු සාකච්ඡා කිරීම.</p>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="ms-program-card scroll-anim fade-up">
+                    <div class="ms-card-number">03</div>
+                    <div class="ms-card-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>EQ Master - EQ 1000</h4>
+                    <p>තියරි වලින් විතරක් ගොඩදාගන්න බැරි ආර්ථික විද්‍යාව හරිය ගොඩදාගන්න හරිම විදිහ.</p>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="ms-program-card scroll-anim fade-up">
+                    <div class="ms-card-number">04</div>
+                    <div class="ms-card-icon"><i class="fas fa-clock"></i></div>
+                    <h4>අවුරුද්දෙන් කැම්පස් (01 year Programme)</h4>
+                    <p>විශේෂ ක්‍රමවේදයෙන් ඔස්සෙ අවුරුද්දෙන් සියලු විශය කරුණු ආවරණය කිරීම.</p>
+                </div>
+
+                <!-- Program 5 -->
+                <div class="ms-program-card scroll-anim fade-up">
+                    <div class="ms-card-number">05</div>
+                    <div class="ms-card-icon"><i class="fas fa-laptop-house"></i></div>
+                    <h4>මාස 07 න් A එකක්</h4>
+                    <p>විභාගය ලංවී පවත්වන මාස 7 පාඩම් ආවරණය.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+  <!-- Results Section -->
+<section class="results-section">
+  <div class="results-container">
+    
+     <h2 class="section-title scroll-anim fade-up" style="color: rgb(252, 232, 232); font-size: 20px;"> Theory පන්තියට අමතරව නොමිලයේ MCQ හා EQ පන්ති 2ක් කරන අද්විතීය පන්තිය</h2>
+     <span class="sub-tag scroll-anim fade-up">පන්තියේ ලමුන් 150 න්</span>
+
+    <div class="counters-grid">
+      
+      <!-- Box 1: Total A Results -->
+      <div class="counter-card">
+        <h3 class="counter-number" data-target="60">0</h3>
+        <p class="counter-label">සමස්ත A සාමාර්ථ</p>
+      </div>
+
+      <!-- Box 2: Island Top Ranks -->
+      <div class="counter-card">
+        <h3 class="counter-number" data-target="32">0</h3>
+        <p class="counter-label">විශ්ව විද්‍යාල ප්‍රවේශය</p>
+      </div>
+
+      <!-- Box 3: District 1st Ranks -->
+      <div class="counter-card">
+        <h3 class="counter-number" data-target="12">0</h3>
+        <p class="counter-label">දිස්ත්‍රික් මුල් 100 අතර</p>
+      </div>
+
+      <!-- Box 4: District Top 10 -->
+      <div class="counter-card">
+        <h3 class="counter-number" data-target="5">0</h3>
+        <p class="counter-label">දිස්ත්‍රික් මුල් 50 අතර</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Class Timetable Section -->
+<section class="ms-timetable-section" id="timetable">
+    <div class="ms-tt-container">
+        
+        <!-- Header -->
+        <div class="ms-tt-header scroll-anim fade-up">
+            <span class="ms-tt-badge ">පන්ති කාලසටහන</span>
+          
+            <p>ඔබට අදාළ උසස් පෙළ වර්ෂය තෝරා පන්ති පැවැත්වෙන ආයතන සහ වේලාවන් පරීක්ෂා කරන්න.</p>
+        </div>
+
+        <!-- Year Filter Tabs -->
+        <div class="ms-tt-tabs scroll-anim fade-up">
+            <button class="ms-tab-btn active" onclick="filterTimetable('2027', this)">2027 A/L (Theory & Revision)</button>
+            <button class="ms-tab-btn" onclick="filterTimetable('2028', this)">2028 A/L (Theory)</button>
+            <button class="ms-tab-btn" onclick="filterTimetable('2029', this)">2029 A/L (Theory)</button>
+        </div>
+
+        <!-- Timetable Cards Grid -->
+        <div class="ms-tt-grid scroll-anim fade-up">
+
+            <!-- ================= 2027 A/L CLASSES ================= -->
+            <!-- 2027 - Supreme Panadura -->
+            <div class="ms-tt-card year-2027">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2027 A/L</span>
+                    <span class="ms-type-tag theory-rev">Theory + Revision</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-map-marker-alt"></i> සුප්‍රිම් - පානදුර</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> සෙනසුරාදා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 3.00 - 6.00</span>
+                        </div>
+                    </div>
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat rev-cat">පුනරීක්ෂණ (Revision)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> බදාදා</span>
+                            <span><i class="far fa-clock"></i> පෙ.ව. 8.30 - 3.30</span>
+                        </div>
+                    </div>
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat rev-cat">මාස 7න් A එකක්</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> සදුදා</span>
+                            <span><i class="far fa-clock"></i> පෙ.ව. 8.00 - 5.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2027 - Siyathra Horana -->
+            <div class="ms-tt-card year-2027">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2027 A/L</span>
+                    <span class="ms-type-tag theory-rev">Theory + Revision</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-map-marker-alt"></i> සියාත්‍රා - හොරණ</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> ඉරිදා</span>
+                            <span><i class="far fa-clock"></i> පෙ.ව. 8.00 - 11.30</span>
+                        </div>
+                    </div>
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat rev-cat">පුනරීක්ෂණ (Revision)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> බදාදා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 6.00 - 10.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2027 - Online -->
+            <div class="ms-tt-card year-2027 online-card">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2027 A/L</span>
+                    <span class="ms-type-tag online-tag"><i class="fas fa-wifi"></i> Online Live</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-laptop"></i> Online පන්ති (Zoom / LMS)</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> සෙනසුරාදා</span>
+                            <span><i class="far fa-clock"></i> පෙ.ව. 11.00 - 2.00</span>
+                        </div>
+                    </div>
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat rev-cat">පුනරීක්ෂණ (Revision)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> සිකුරදා</span>
+                            <span><i class="far fa-clock"></i> පෙ.ව. 8.00 - 12.00</span>
+                        </div>
+                    </div>
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat rev-cat">මාස 7න් A එකක්</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> ඉරිදා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 6.30 - 12.30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ================= 2028 A/L CLASSES (THEORY ONLY) ================= -->
+            <!-- 2028 - Supreme Panadura -->
+            <div class="ms-tt-card year-2028" style="display: none;">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2028 A/L</span>
+                    <span class="ms-type-tag theory-only">Theory Only</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-map-marker-alt"></i> සුප්‍රිම් - පානදුර</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> බ්‍රහස්පතින්දා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 3.30 - 6.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2028 - Siyathra Horana -->
+            <div class="ms-tt-card year-2028" style="display: none;">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2028 A/L</span>
+                    <span class="ms-type-tag theory-only">Theory Only</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-map-marker-alt"></i> සියාත්‍රා - හොරණ</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> බදාදා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 3.30 - 6.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2028 - Online -->
+            <div class="ms-tt-card year-2028 online-card" style="display: none;">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2028 A/L</span>
+                    <span class="ms-type-tag online-tag"><i class="fas fa-wifi"></i> Online Theory</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-laptop"></i> Online පන්ති (Zoom / LMS)</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> සදුදා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 9.00 - 11.30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- ================= 2029 A/L CLASSES (THEORY ONLY) ================= -->
+            <!-- 2029 - Supreme Panadura -->
+            <div class="ms-tt-card year-2029" style="display: none;">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2029 A/L</span>
+                    <span class="ms-type-tag theory-only">Theory Only</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-map-marker-alt"></i> සුප්‍රිම් - පානදුර</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> බ්‍රහස්පතින්දා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 1.30 - 3.30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2029 - Siyathra Horana -->
+            <div class="ms-tt-card year-2029" style="display: none;">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2029 A/L</span>
+                    <span class="ms-type-tag theory-only">Theory Only</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-map-marker-alt"></i> සියාත්‍රා - හොරණ</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> බදාදා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 1.30 - 3.30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2029 - Online -->
+            <div class="ms-tt-card year-2029 online-card" style="display: none;">
+                <div class="ms-tt-card-top">
+                    <span class="ms-year-tag">2029 A/L</span>
+                    <span class="ms-type-tag online-tag"><i class="fas fa-wifi"></i> Online Theory</span>
+                </div>
+                <h3 class="ms-institute-name"><i class="fas fa-laptop"></i> Online පන්ති (Zoom / LMS)</h3>
+                <div class="ms-schedule-list">
+                    <div class="ms-schedule-item">
+                        <span class="ms-class-cat">සිද්ධාන්ත (Theory)</span>
+                        <div class="ms-time-row">
+                            <span><i class="far fa-calendar-alt"></i> සදුදා</span>
+                            <span><i class="far fa-clock"></i> ප.ව. 6.30 - 8.30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Special Online Programmes Box (MCQ Booster & EQ Master) -->
+<section class="ms-special-online-section" id="special-online">
+    <div class="ms-so-container">
+        
+        <!-- Outer Highlight Box -->
+        <div class="ms-so-main-box">
+            
+            <!-- Top Header -->
+            <div class="ms-so-header scroll-anim fade-up">
+                <span class="ms-so-live-badge"><i class="fas fa-satellite-dish"></i> ONLINE SPECIAL PROGRAMMES</span>
+                <h2>විශේෂ Online <span class="ms-gold-text">පුහුණු වැඩසටහන්</span></h2>
+                <p>විභාග ලකුණු ඉහළ නංවා ගැනීම සඳහාම සැකසූ සුවිශේෂී සජීවී (Live) වැඩමුළු ද්විත්වය</p>
+            </div>
+
+            <!-- Two Programmes Grid -->
+            <div class="ms-so-grid">
+                
+                <!-- Programme 1: MCQ Booster -->
+                <div class="ms-so-card scroll-anim fade-up">
+                    <div class="ms-so-card-top">
+                        <div class="ms-so-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <span class="ms-so-platform scroll-anim fade-up"><i class="fas fa-video"></i> Zoom Live</span>
+                    </div>
+                    
+                    <h3>MCQ <span class="ms-gold-text">Booster</span></h3>
+                    <p class="ms-so-desc">
+                        බහුවරණ ප්‍රශ්න පත්‍රයට (Paper I) නියමිත කාලය තුළ නිවැරදිව සහ වේගවත්ව පිළිතුරු සැපයීමේ කෙටි ක්‍රම පුහුණු කරන විශේෂ වැඩසටහන.
+                    </p>
+
+                    <div class="ms-so-datetime-box">
+                        <div class="ms-so-dt-item">
+                            <i class="far fa-calendar-alt"></i>
+                            <div>
+                                <small>දිනය</small>
+                                <strong>සෑම අගහරුවාදා දිනකම</strong>
+                            </div>
+                        </div>
+                        <div class="ms-so-dt-divider"></div>
+                        <div class="ms-so-dt-item">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <small>වේලාව</small>
+                                <strong>රාත්‍රී 9.30 - 12.30</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programme 2: EQ Master -->
+                <div class="ms-so-card scroll-anim fade-up">
+                    <div class="ms-so-card-top">
+                        <div class="ms-so-icon">
+                            <i class="fas fa-pen-nib"></i>
+                        </div>
+                        <span class="ms-so-platform"><i class="fas fa-video"></i> Zoom Live</span>
+                    </div>
+                    
+                    <h3>EQ <span class="ms-gold-text">Master</span></h3>
+                    <p class="ms-so-desc">
+                        රචනා ප්‍රශ්න පත්‍රය (Paper II / Essay Questions) සඳහා ලකුණු සම්පූර්ණයෙන්ම ලබා ගන්නා ආකාරයට පිළිතුරු ගොඩනැගීමේ විශේෂ පුහුණුව.
+                    </p>
+
+                    <div class="ms-so-datetime-box">
+                        <div class="ms-so-dt-item">
+                            <i class="far fa-calendar-alt"></i>
+                            <div>
+                                <small>දිනය</small>
+                                <strong>සෑම බ්‍රහස්පතින්දා දිනකම</strong>
+                            </div>
+                        </div>
+                        <div class="ms-so-dt-divider"></div>
+                        <div class="ms-so-dt-item">
+                            <i class="far fa-clock"></i>
+                            <div>
+                                <small>වේලාව</small>
+                                <strong>පෙ.ව. 8.00 - 11.00</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Why Our Class is Special (අපේ පන්තිය විශේෂ ඇයි?) Section -->
+<section class="ms-why-special-section " id="why-special">
+    <div class="ms-ws-container">
+
+        <!-- Top Highlight Banner: Free Tute Delivery -->
+        <div class="ms-tute-banner scroll-anim fade-up">
+            <div class="ms-tute-icon">
+                <i class="fas fa-shipping-fast"></i>
+            </div>
+            <div class="ms-tute-text">
+                <span class="ms-tute-tag">නොමිලේ නිබන්ධන සේවාව</span>
+                <p>අදාළ නිබන්ධන සියල්ලම <strong>නොමිලේම</strong> ආරක්ෂිතව ඔබේ නිවසට ලබාදීමට කටයුතු කරනු ඇත.</p>
+            </div>
+        </div>
+
+        <!-- Section Header -->
+        <div class="ms-ws-header scroll-anim fade-up">
+            <span class="ms-ws-badge">සුවිශේෂීත්වය</span>
+            <h2>අපේ පන්තිය <span class="ms-gold-text">විශේෂ ඇයි?</span></h2>
+            <div class="ms-ws-line"></div>
+        </div>
+
+        <!-- 6 Special Features Grid -->
+        <div class="ms-ws-grid scroll-anim fade-up">
+            
+            <!-- Feature 1 -->
+            <div class="ms-ws-card">
+                <div class="ms-ws-card-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <h4>පුද්ගලික අවධානය සහ පරීක්ෂාව</h4>
+                <p>සෑම සිසුවෙකු කෙරෙහිම පුද්ගලික අවධානය යොමු කිරීම සහ සියලුම අභ්‍යාස ගුරුවරයා විසින්ම පරීක්ෂා කිරීම.</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="ms-ws-card">
+                <div class="ms-ws-card-icon">
+                    <i class="fas fa-list-ol"></i>
+                </div>
+                <h4>MCQ 5000ක් කරවීම</h4>
+                <p>විෂය නිර්දේශයේ සියලුම ඒකක ආවරණය වන පරිදි බහුවරණ ප්‍රශ්න (MCQ) 5000ක් සාකච්ඡා කර පුහුණු කරවීම.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="ms-ws-card">
+                <div class="ms-ws-card-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h4>EQ 1000ක් කරවීම</h4>
+                <p>රචනා ප්‍රශ්න (Essay Questions) 1000ක් ලියවා නිවැරදි පිළිතුරු රටාවට සිසුන් හුරු කරවීම.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="ms-ws-card">
+                <div class="ms-ws-card-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h4>විභාග ඉලක්කගත පෙරහුරු විභාග</h4>
+                <p>සැබෑ විභාග අත්දැකීම ලබා දෙමින් විභාග ඉලක්කගත පෙරහුරු විභාග පැවැත්වීම.</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="ms-ws-card">
+                <div class="ms-ws-card-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <h4>වාර විභාග සඳහා විශේෂ සූදානම</h4>
+                <p>පාසල් වාර විභාග ඉලක්ක කරගනිමින් සිසුන්ට ඉහළම ලකුණු ලබා ගැනීමට විශේෂ සූදානමක් ලබා දීම.</p>
+            </div>
+
+            <!-- Feature 6 -->
+            <div class="ms-ws-card">
+                <div class="ms-ws-card-icon">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+                <h4>Zoom සහ YouTube Recordings</h4>
+                <p>මඟහැරෙන පාඩම් නැවත අධ්‍යයනය කිරීමට ඕනෑම වාරයක් නැරඹිය හැකි Zoom හා YouTube Recording ලබා දීම.</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Special Notice (සැ.යු. - Limited to 20 Students) -->
+        <div class="ms-limited-notice scroll-anim fade-up">
+            <div class="ms-notice-badge">
+                <i class="fas fa-exclamation-triangle"></i> සැ.යු.
+            </div>
+            <p>
+                ඉහත සියලුම පන්ති සඳහා එක් කණ්ඩායමකට <span class="ms-highlight-seat">සිසුන් 20ක් පමණක්</span> බඳවා ගන්නා බැවින් ඔබේ ආසනය අදම ඉක්මනින් වෙන් කරවා ගන්න.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Online Class Section -->
+<div class="online-class-section scroll-anim fade-up">
+    <div class="teacher-card">
+        <!-- Teacher Photo (මෙතැනට සර්ගේ photo එකේ link/path එක දෙන්න) -->
+        <img src="payment.jpg" alt="Teacher Photo" class="teacher-photo">
+        
+        <h2>Online Class එකට එකතු වෙන්න</h2>
+        <p >මුදල් ගෙවා රිසිට්පත නම/විභාග වර්ෂය/ලිපිනය යන තොරතුරු සමග Whats app කරන්න</p> <br>
+        
+        <!-- Buttons Group -->
+        <div class="button-group">
+            <!-- Red Register Button (කෙලින්ම යට තියෙන Register Form එකට Scroll වේ) -->
+            <a href="#register-form" class="btn btn-register">ලියාපදිංචි වීම</a>
+            
+            <!-- Green Payment Details Button (Popup eka Open වේ) -->
+            <button type="button" class="btn btn-payment" onclick="openPaymentModal()">ගෙවීම් විස්තර</button>
+        </div>
+    </div>
+</div>
+
+<!-- Payment Details Popup Modal -->
+<div id="paymentModal" class="modal">
+    <div class="modal-content">
+        <!-- Close Icon -->
+        <span class="close-btn" onclick="closePaymentModal()">&times;</span>
+        
+        <h3>ගෙවීම් විස්තර (Payment Details)</h3>
+        
+        <!-- Payment Photo (මෙතැනට payment details photo එකේ path එක දෙන්න) -->
+        <img src="pay.png" alt="Payment Details" class="payment-img">
+    </div>
+</div>
+
+<!-- ------------------------------------------------------------- -->
+<!-- උදාහරණයක් ලෙස යටින් ඇති Register Form එක (ඔබේ Form එකේ id="register-form" ලෙස තිබිය යුතුය) -->
+<!-- <div id="register-form">
+    ... ඔබේ Register Form එක මෙතැන ඇත ...
+</div> -->
+
+
+<!-- Memories Gallery Section -->
+<section class="memories-section">
+  <div class="memories-container">
+    
+    <span class="sub-tag">අපේ මතකයන්</span>
+    <h2 class="section-title">සිසුන් සමඟ සුන්දර මතක සටහන්</h2>
+
+    <div class="gallery-grid">
+      
+      <!-- Photo 1 (Main Featured Photo) -->
+      <div class="gallery-item item-large scroll-anim fade-up">
+        <img src="3.jpg" alt="Students Memory 1">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 2 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="100">
+        <img src="4.jpg" alt="Students Memory 2">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 3 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="200">
+        <img src="1.jpg" alt="Students Memory 3">
+        <div class="gallery-overlay">
+         
+        </div>
+      </div>
+
+      <!-- Photo 4 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="300">
+        <img src="2.jpg" alt="Students Memory 4">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+      <!-- Photo 5 -->
+      <div class="gallery-item scroll-anim fade-up" data-delay="400">
+        <img src="5.jpg" alt="Students Memory 5">
+        <div class="gallery-overlay">
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- Student Registration Section (WhatsApp Direct) -->
+<section class="ms-register-section" id="register">
+    <div class="ms-reg-container" id="register-form">
+        
+        <div class="ms-reg-box">
+            <!-- Header -->
+            <div class="ms-reg-header scroll-anim fade-up">
+                <span class="ms-reg-badge"><i class="fas fa-user-plus"></i> ONLINE REGISTRATION</span>
+                <h2>පන්ති සඳහා <span class="ms-gold-text">ලියාපදිංචි වන්න</span></h2>
+                <p>පහත තොරතුරු නිවැරදිව පුරවා <strong>WhatsApp</strong> හරහා සර් වෙත යොමු කරන්න.</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form class="ms-reg-form" onsubmit="sendToWhatsApp(event)">
+                
+                <!-- Student Name -->
+                <div class="ms-form-group scroll-anim fade-up">
+                    <label for="stName"><i class="fas fa-user"></i> ශිෂ්‍යයාගේ / ශිෂ්‍යාවගේ නම</label>
+                    <input type="text" id="stName" placeholder="උදා: කසුන් පෙරේරා" required>
+                </div>
+
+                <!-- School -->
+                <div class="ms-form-group scroll-anim fade-up">
+                    <label for="stSchool"><i class="fas fa-school"></i> පාසල (School)</label>
+                    <input type="text" id="stSchool" placeholder="උදා: තක්ෂිලා මධ්‍ය මහා විද්‍යාලය - හොරණ" required>
+                </div>
+
+                <!-- District -->
+                <div class="ms-form-group scroll-anim fade-up">
+                    <label for="stDistrict"><i class="fas fa-map-marked-alt"></i> දිස්ත්‍රික්කය (District)</label>
+                    <select id="stDistrict" required>
+                        <option value="" disabled selected>ඔබේ දිස්ත්‍රික්කය තෝරන්න...</option>
+                        <option value="කළුතර (Kalutara)">කළුතර (Kalutara)</option>
+                        <option value="කොළඹ (Colombo)">කොළඹ (Colombo)</option>
+                        <option value="ගම්පහ (Gampaha)">ගම්පහ (Gampaha)</option>
+                        <option value="ගාල්ල (Galle)">ගාල්ල (Galle)</option>
+                        <option value="මාතර (Matara)">මාතර (Matara)</option>
+                        <option value="හම්බන්තොට (Hambantota)">හම්බන්තොට (Hambantota)</option>
+                        <option value="රත්නපුර (Ratnapura)">රත්නපුර (Ratnapura)</option>
+                        <option value="කෑගල්ල (Kegalle)">කෑගල්ල (Kegalle)</option>
+                        <option value="මහනුවර (Kandy)">මහනුවර (Kandy)</option>
+                        <option value="මාතලේ (Matale)">මාතලේ (Matale)</option>
+                        <option value="නුවරඑළිය (Nuwara Eliya)">නුවරඑළිය (Nuwara Eliya)</option>
+                        <option value="කුරුණෑගල (Kurunegala)">කුරුණෑගල (Kurunegala)</option>
+                        <option value="පුත්තලම (Puttalam)">පුත්තලම (Puttalam)</option>
+                        <option value="අනුරාධපුරය (Anuradhapura)">අනුරාධපුරය (Anuradhapura)</option>
+                        <option value="පොළොන්නරුව (Polonnaruwa)">පොළොන්නරුව (Polonnaruwa)</option>
+                        <option value="බදුල්ල (Badulla)">බදුල්ල (Badulla)</option>
+                        <option value="මොණරාගල (Monaragala)">මොණරාගල (Monaragala)</option>
+                        <option value="යාපනය (Jaffna)">යාපනය (Jaffna)</option>
+                        <option value="කිලිනොච්චිය (Kilinochchi)">කිලිනොච්චිය (Kilinochchi)</option>
+                        <option value="මන්නාරම (Mannar)">මන්නාරම (Mannar)</option>
+                        <option value="වවුනියාව (Vavuniya)">වවුනියාව (Vavuniya)</option>
+                        <option value="මුලතිව් (Mullaitivu)">මුලතිව් (Mullaitivu)</option>
+                        <option value="මඩකලපුව (Batticaloa)">මඩකලපුව (Batticaloa)</option>
+                        <option value="අම්පාර (Ampara)">අම්පාර (Ampara)</option>
+                        <option value="ත්‍රිකුණාමලය (Trincomalee)">ත්‍රිකුණාමලය (Trincomalee)</option>
+                    </select>
+                </div>
+
+                <!-- Participation Mode (සහභාගී වන ආකාරය) -->
+                <div class="ms-form-group scroll-anim fade-up">
+                    <label><i class="fas fa-chalkboard"></i> සහභාගී වන ආකාරය</label>
+                    <div class="ms-radio-grid">
+                        <label class="ms-radio-card">
+                            <input type="radio" name="stMode" value="සුප්‍රිම් - පානදුර" required>
+                            <span class="ms-radio-box">
+                                <i class="fas fa-building"></i>
+                                <strong>සුප්‍රිම්</strong>
+                                <small>පානදුර</small>
+                            </span>
+                        </label>
+
+                        <label class="ms-radio-card scroll-anim fade-up">
+                            <input type="radio" name="stMode" value="සියාත්‍රා - හොරණ" required>
+                            <span class="ms-radio-box">
+                                <i class="fas fa-building"></i>
+                                <strong>සියාත්‍රා</strong>
+                                <small>හොරණ</small>
+                            </span>
+                        </label>
+
+                        <label class="ms-radio-card scroll-anim fade-up">
+                            <input type="radio" name="stMode" value="Online පන්ති" required>
+                            <span class="ms-radio-box">
+                                <i class="fas fa-laptop"></i>
+                                <strong>Online</strong>
+                                <!-- <small>Zoom / LMS</small> -->
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="ms-wa-submit-btn scroll-anim fade-up">
+                    <i class="fab fa-whatsapp"></i> WhatsApp මගින් ලියාපදිංචි වන්න
+                </button>
+
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- Your Teacher (ඔබේ ගුරුවරයා) & 4 Qualifications Section -->
+<section class="ms-teacher-qual-section" id="your-teacher">
+    <div class="ms-tq-container">
+        
+        <div class="ms-tq-wrapper">
+            
+            <!-- Left Side: Sir's Photo -->
+            <div class="ms-tq-photo-col scroll-anim fade-up">
+                <div class="ms-tq-photo-frame">
+                    <!-- මෙතන src එකට සර්ගේ ෆොටෝ එකේ path එක හෝ link එක දාන්න -->
+                    <img src="t2.jpg" alt="මලිඳු සර් - ඔබේ ගුරුවරයා">
+                    
+                    <div class="ms-tq-floating-tag">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>A/L Economics</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Tagline & 4 Qualifications -->
+            <div class="ms-tq-content-col scroll-anim fade-up">
+                <span class="ms-tq-tagline">ඔබේ ගුරුවරයා</span>
+                <h2 class="ms-tq-name">මලිඳු <span class="ms-gold-text">සර්</span></h2>
+                <p class="ms-tq-intro">
+                    උසස් පෙළ ආර්ථික විද්‍යා විෂය නිර්දේශය ඉතා සරලව හා තර්කානුකූලව සිසුන්ට අවබෝධ කරවමින්, විශිෂ්ට ප්‍රතිඵල කරා ඔබව මෙහෙයවන ඔබේ ආදරණීය ගුරුවරයා එන්න අපි ඔයාගෙ හීන පාට කරමු.
+                </p>
+
+                <!-- 4 Qualifications Grid -->
+                <div class="ms-qual-grid">
+                    
+                    <!-- Qualification 1 -->
+                    <div class="ms-qual-card">
+                        <div class="ms-qual-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="ms-qual-text">
+                            <h4>ආනන්ද ශාස්ත්‍රාලයෙන් උසස්පෙළ හදාරා ඇත</h4>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Qualification 2 -->
+                    <div class="ms-qual-card">
+                        <div class="ms-qual-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="ms-qual-text">
+                            <h4>රුහුණු විශ්ව විද්‍යාලයෙන් උසස් අද්‍යාපනය සම්පූරණ කර ඇත</h4>
+                            <!-- <p>උසස් පෙළ ආර්ථික විද්‍යා දේශකවරයෙකු ලෙස දීර්ඝකාලීන අත්දැකීම්</p> -->
+                        </div>
+                    </div>
+
+                    <!-- Qualification 3 -->
+                    <div class="ms-qual-card">
+                        <div class="ms-qual-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="ms-qual-text">
+                            <h4>AAT ආයතනයේ සියලු අදියර සමත් වී ඇත</h4>
+                            <!-- <p>වාර්ෂිකව ඉහළම A සහ B සාමාර්ථ ප්‍රතිශතයක් බිහි කිරීම</p> -->
+                        </div>
+                    </div>
+
+                    <!-- Qualification 4 -->
+                    <div class="ms-qual-card">
+                        <div class="ms-qual-icon">
+                            <i class="fas fa-file-signature"></i>
+                        </div>
+                        <div class="ms-qual-text">
+                            <h4>පුරා වසර 6ක ක්ෂේත්‍රයේ අත්දැකීම් ඇත</h4>
+                            
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- සම්බන්ධ කරගැනීමේ කොටස (Contact Section) -->
+<section class="contact-section" id="contact">
+    <div class="container">
+        <div class="contact-box" id="contact1">
+            <h2 class="section-title">ගුරුතුමා සම්බන්ධ කරගන්න</h2>
+            <p class="contact-description">පන්ති පිළිබඳ වැඩිදුර විස්තර දැනගැනීමට පහත දුරකථන අංකයට අමතන්න හෝ WhatsApp හරහා පණිවිඩයක් එවන්න.</p>
+
+            <!-- සාමාන්‍ය විස්තර -->
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <p><strong>දුරකථන:</strong>074 3410 996 / 074 161 5996</p>
+                </div>
+              
+            </div>
+
+            <!-- WhatsApp බොත්තම -->
+            <div class="whatsapp-container">
+                <!-- 947XXXXXXXX වෙනුවට ඔයාගේ නම්බර් එක දාන්න (බිංදුව නැතුව 94 න් පටන්ගන්න) -->
+                <a href="https://wa.me/94743410996" target="_blank" class="whatsapp-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="wa-icon" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
+                    </svg>
+                    WhatsApp හරහා සම්බන්ධ වන්න
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+ <!-- Footer Section -->
+<footer class="ms-footer">
+    <div class="ms-footer-container">
+        
+        <!-- Top Part: Brand & Social Media Links -->
+        <div class="ms-footer-top">
+            <div class="ms-footer-brand scroll-anim fade-up">
+                <h3>මලිඳු <span class="ms-gold-text">ජයසංක</span></h3>
+                <p>උසස් පෙළ ආර්ථික විද්‍යාව (A/L Economics) - සුප්‍රිම් පානදුර | සියාත්‍රා හොරණ | Online</p>
+            </div>
+
+            <!-- 3 Social Media Icons -->
+            <div class="ms-social-links scroll-anim fade-up">
+                <!-- WhatsApp Channel -->
+                <a href="https://whatsapp.com/channel/0029Vb1EwHSCXC3Qjj8Oi02E" target="_blank" rel="noopener noreferrer" class="ms-social-btn" aria-label="WhatsApp Channel" title="WhatsApp Channel">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+
+                <!-- TikTok -->
+                <a href="https://www.tiktok.com/@malindujayasanka?_r=1&_t=ZS-9BRh913lvim" target="_blank" rel="noopener noreferrer" class="ms-social-btn" aria-label="TikTok" title="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/MalinduJayasankacommerce?mibextid=ZbWKwL" target="_blank" rel="noopener noreferrer" class="ms-social-btn" aria-label="Facebook" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Divider Line -->
+        <div class="ms-footer-divider"></div>
+
+        <!-- Bottom Part: Copyright & Developer Credit (Home Artist) -->
+        <div class="ms-footer-bottom">
+            <p class="ms-copyright">
+                © 2026 <strong>Malindu Jayasanka Economics</strong>. All Rights Reserved.
+            </p>
+            
+            <p class="ms-dev-credit">
+                Designed & Developed by 
+                <a href="tel:0781227941" class="ms-dev-link">
+                    <span class="ms-gold-text">Home Artist</span> 
+                    <span class="ms-dev-phone"><i class="fas fa-phone-alt"></i> 078 122 7941</span>
+                </a>
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+  <!-- AOS JS Library -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    //mula thiyana text animation eka 
+  AOS.init({
+    once: true // Web page එක open වෙද්දි එක පාරක් විතරක් animate වෙන්න
+  });
+
+
+  //result count 
+ 
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll('.counter-number');
+
+    const startCounting = (counter) => {
+      const target = +counter.getAttribute('data-target');
+      const duration = 2000; // Count වෙන්න යන මුළු කාලය (Milliseconds - 2 Seconds)
+      const stepTime = 20;
+      const totalSteps = duration / stepTime;
+      const increment = target / totalSteps;
+
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+          counter.innerText = target + "+"; // අගය ඉවර වුණාම අගට + සලකුණ වැටේ
+          clearInterval(timer);
+        } else {
+          counter.innerText = Math.ceil(current);
+        }
+      }, stepTime);
+    };
+
+    // User Scroll කරලා Section එකට ආවම විතරක් Count වෙන්න හදපු Observer එක
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting(entry.target);
+          observer.unobserve(entry.target); // එක පාරක් වැඩ කළ පසු නතර වේ
+        }
+      });
+    }, { threshold: 0.3 });
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  });
+
+//text animation 
+document.addEventListener("DOMContentLoaded", () => {
+    const animatedTexts = document.querySelectorAll('.scroll-anim');
+
+    const textObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const delay = entry.target.getAttribute('data-delay') || 0;
+          
+          setTimeout(() => {
+            entry.target.classList.add('appear');
+          }, delay);
+
+          textObserver.unobserve(entry.target); // එක පාරක් animate වූ පසු නතර වේ
+        }
+      });
+    }, {
+      threshold: 0.15 // Text එකෙන් 15%ක් Screen එකට ආ පසු Animation එක පටන් ගනී
+    });
+
+    animatedTexts.forEach(text => textObserver.observe(text));
+  });
+
+
+
+//payment box
+    // Payment Details Modal එක Open කරන Function එක
+function openPaymentModal() {
+    document.getElementById("paymentModal").style.display = "flex";
+}
+
+// Modal එක Close කරන Function එක
+function closePaymentModal() {
+    document.getElementById("paymentModal").style.display = "none";
+}
+
+// Modal එකෙන් එලිය ක්ලික් කල විටත් auto close වන කෝඩ් එක
+window.onclick = function(event) {
+    var modal = document.getElementById("paymentModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+//time table
+function filterTimetable(year, clickedBtn) {
+    // 1. Remove 'active' class from all buttons
+    const buttons = document.querySelectorAll('.ms-tab-btn');
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    // 2. Add 'active' class to clicked button
+    clickedBtn.classList.add('active');
+
+    // 3. Hide all timetable cards
+    const allCards = document.querySelectorAll('.ms-tt-card');
+    allCards.forEach(card => {
+        card.style.display = 'none';
+    });
+
+    // 4. Show only the cards matching the selected year
+    const selectedCards = document.querySelectorAll('.year-' + year);
+    selectedCards.forEach(card => {
+        card.style.display = 'block';
+    });
+}
+
+
+
+//register
+function sendToWhatsApp(event) {
+    event.preventDefault(); // Form එක නිකන්ම reload වෙන එක නවත්වනවා
+
+    // 1. Form values ලබා ගැනීම
+    const name = document.getElementById('stName').value.trim();
+    const school = document.getElementById('stSchool').value.trim();
+    const district = document.getElementById('stDistrict').value;
+    const modeElement = document.querySelector('input[name="stMode"]:checked');
+    const mode = modeElement ? modeElement.value : '';
+
+    // 2. WhatsApp Number එක (0743410996 -> 94743410996)
+    const phoneNumber = "94743410996";
+
+    // 3. WhatsApp එකට යන Message එක සැකසීම
+    const message = 
+`*නව ශිෂ්‍ය ලියාපදිංචිය - A/L Economics (මලිඳු සර්)* 
+
+ *නම:* ${name}
+ *පාසල:* ${school}
+ *දිස්ත්‍රික්කය:* ${district}
+ *සහභාගී වන ආකාරය:* ${mode}
+
+_වෙබ් අඩවිය හරහා යොමු කරන ලදී._`;
+
+    // 4. URL Encode කරලා WhatsApp Open කිරීම
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, '_blank');
+}
+
+</script>
+
+</body>
+</html>
